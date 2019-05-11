@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Administrador";
+    Layout = "~/Views/Shared/_Layout_Empresa.cshtml";
+}
+
+<h2>Administrador</h2>
+
+
+@if (Session["nomeUsuarioLogado"] != null)
+{
+    <text>
+        <h3> BemVindo @Session["nomeUsuarioLogado"].ToString() </h3><br />
+        @Session["login"].ToString()
+
+    </text>
+}

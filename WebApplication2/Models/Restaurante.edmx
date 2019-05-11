@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Packed_Lunch_4Model5.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Restaurante">
+          <Key>
+            <PropertyRef Name="Id_Restaurante" />
+          </Key>
+          <Property Name="Id_Restaurante" Type="int" Nullable="false" />
+          <Property Name="Cnpj" Type="char" MaxLength="14" />
+          <Property Name="Nome" Type="varchar" MaxLength="255" />
+          <Property Name="Endereco" Type="varchar" MaxLength="450" />
+          <Property Name="Cidade" Type="varchar" MaxLength="400" />
+          <Property Name="Telefone" Type="char" MaxLength="20" />
+          <Property Name="Login" Type="varchar" MaxLength="255" />
+          <Property Name="Senha" Type="varchar" MaxLength="255" />
+          <Property Name="Id_horario_fk" Type="int" />
+        </EntityType>
+        <EntityContainer Name="Packed_Lunch_4Model5StoreContainer">
+          <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Packed_Lunch_4Model5" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Restaurante">
+          <Key>
+            <PropertyRef Name="Id_Restaurante" />
+          </Key>
+          <Property Name="Id_Restaurante" Type="Int32" Nullable="false" />
+          <Property Name="Cnpj" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Name="Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Endereco" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="Cidade" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="Telefone" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Id_horario_fk" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="Packed_Lunch_4Entities8" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Restaurante" EntityType="Self.Restaurante" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Packed_Lunch_4Model5StoreContainer" CdmEntityContainer="Packed_Lunch_4Entities8">
+          <EntitySetMapping Name="Restaurante">
+            <EntityTypeMapping TypeName="Packed_Lunch_4Model5.Restaurante">
+              <MappingFragment StoreEntitySet="Restaurante">
+                <ScalarProperty Name="Id_Restaurante" ColumnName="Id_Restaurante" />
+                <ScalarProperty Name="Cnpj" ColumnName="Cnpj" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Id_horario_fk" ColumnName="Id_horario_fk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
